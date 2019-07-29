@@ -50,3 +50,14 @@ var result = createSafeSquareAreaAndPerimiter();
 result[0](2);
 result[1](5);
 console.log([result[2](), result[3]()]);
+
+//Task4.
+
+function digitSum (k){
+    if (k > 0){
+        k = k % 10 + digitSum(Math.floor(k / 10));
+    };
+    return k;
+};
+var res = digitSum(1234);
+console.log(res);
