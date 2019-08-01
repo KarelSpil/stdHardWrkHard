@@ -2,5 +2,5 @@
 'use strict';
 
 var user = {
-
+    name : 'Cris'
 };
