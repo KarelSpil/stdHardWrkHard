@@ -133,7 +133,7 @@ isEmpty(testPoint);
 //     Bill : 300,
 //     Mike : 250
 // };
-// console.log(salaries.__proto__.constructor.assign.length);
+
 var salaries = {
     John : 400,
     Cris : 150,
