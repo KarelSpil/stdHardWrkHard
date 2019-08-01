@@ -148,3 +148,22 @@ for (var key in salaries){
     res = temp / (Object.keys(salaries).length)
 };
 console.log('Средняя зарплата = ' + res);
+
+//```````````````````````````````````````````````````````
+//```````````````````Lesson 2````````````````````````````
+//Lesson 2. Task 1.
+var calculator = {
+    read : function (){
+        this.firstNumber = Number(prompt('Введите первое число', 0));
+        this.secondNumber = Number(prompt('Введите второе число', 0));
+    },
+    sum : function (){
+        return this.firstNumber + this.secondNumber;
+    },
+    mul : function (){
+        return this.firstNumber * this.secondNumber;
+    }
+};
+calculator.read();
+console.log('Cумма sum() =', calculator.sum());
+console.log('Произведение mul() =', calculator.mul());
