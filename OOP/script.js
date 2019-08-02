@@ -11,7 +11,7 @@ delete user.name
 console.log(user.name);
 
 //Lesson 1. Task 2.
-//Упращенный
+//Упрощенный
 
 var car = {
     model : 'Renault',
