@@ -109,15 +109,12 @@ var peoples = {
 };
 console.log(peoples.developers[1].name);
 
-//Lesson 1. Task 6. !!!!!!!!!!!!!!!!!!!!
+//Lesson 1. Task 6.
 function isEmpty(obj){
     for (var key in obj){
-        if (key !== undefined){
-            console.log('false');
-        } else if (key == undefined) {
-            console.log('true');
-        };
+        return console.log("false");
     };
+    return console.log("true");
 };
 
 var testPoint = {
@@ -125,7 +122,6 @@ var testPoint = {
 }; 
 
 isEmpty(testPoint);
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 //Lesson 1. Task 7.
 // var salaries = {
