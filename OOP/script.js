@@ -163,3 +163,52 @@ var calculator = {
 calculator.read();
 console.log('Cумма sum() =', calculator.sum());
 console.log('Произведение mul() =', calculator.mul());
+
+
+//Lesson 3. Task 1.
+//Метод bind
+var user = {
+   name: "Tom"
+};
+function format(beginMsg, endMsg) {
+   console.log(beginMsg + this.name + endMsg);
+}
+var tomFormat = format.bind(user);
+tomFormat("<<<", ">>>"); // "<<<Tom>>>"
+//Анонимную функцию обвертку
+var user = {
+   name: "Tom",
+   useFormat :  format
+};
+function format (beginMsg, endMsg) {
+   console.log(beginMsg + this.name + endMsg);
+};
+var tomFormat = function(){
+	user.useFormat("<<<", ">>>")
+};
+tomFormat(); // "<<<Tom>>>"
+
+//Lesson 3. Task 2.
+function mul(a, b) {
+   return a * b;
+}
+var doubleMul = mul.bind(null, 2);// Ваш код
+var qudraMul = mul.bind(null, 4);// Ваш код
+console.log(doubleMul(5)); // 10
+console.log(qudraMul(5)); // 20
+
+//Lesson 3. Task 3.
+function bind(func, context) {
+   return function() {
+   	return func.call(context, arguments)
+   };
+};
+function func() {
+   console.log(this.name + " - "+ this.age);
+}
+var user = {
+   name: "Tom",
+   age: 20
+};
+var f = bind(func, user);
+f(); // "Tom – 20"
