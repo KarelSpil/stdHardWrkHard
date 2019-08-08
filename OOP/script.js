@@ -302,7 +302,7 @@ var qudraMul = mul.bind(null, 4);// Ваш код
 console.log(doubleMul(5)); // 10
 console.log(qudraMul(5)); // 20
 
- //Lesson 3. Task 3.
+//Lesson 3. Task 3.
 function bind(func, context) {
     return function() {
         return func.call(context, arguments)
@@ -316,4 +316,4 @@ var user = {
     age: 20
 };
 var f = bind(func, user);
- f(); // "Tom – 20"
+f(); // "Tom – 20"
