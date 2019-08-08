@@ -8,8 +8,8 @@ function Mp3 (brand, model, codeName, memory, haveDisplay, battery) {
     this.memory      = memory;
     this.haveDisplay = haveDisplay;
     this.battery     = battery;
-    this.__state       = 'off';
-    this.track         = 'Beyonce - Halo'
+    this.__state     = 'off';
+    this.track       = 'Beyonce - Halo'
 };
 Mp3.prototype.powerOn = function () {
     this.state = 'on';
