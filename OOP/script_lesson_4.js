@@ -12,12 +12,12 @@ function Mp3 (brand, model, codeName, memory, haveDisplay, battery) {
     this.track       = 'Beyonce - Halo'
 };
 Mp3.prototype.powerOn = function () {
-    this.state = 'on';
-    console.log('Hi your ' + this.brand + ":" + this.model + " is " + this.state);
+    this.__state = 'on';
+    console.log('Hi your ' + this.brand + ":" + this.model + " is " + this.__state);
 };
 Mp3.prototype.powerOff = function () {
-    this.state = 'off';
-    console.log('Your ' + this.brand + ":" + this.model + " is " + this.state);
+    this.__state = 'off';
+    console.log('Your ' + this.brand + ":" + this.model + " is " + this.__state);
 };
 Mp3.prototype.playMusic = function () {
     console.log('Now play : ' + this.track);
