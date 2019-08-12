@@ -114,3 +114,54 @@ CircleFigure.prototype.info = function () {
 }
 var circle = new CircleFigure();
 
+//Lesson 4. Task 5.
+function Square (nameFigure) {
+    this._nameFigure = nameFigure;
+    this._sideLeght = null;
+    this._perimeter = null;
+};
+Square.prototype.__isCorrectData = function (value) {
+    if (typeof value == 'number' && !isNaN(value)){
+        return true;
+    }
+    return false;
+};
+Square.prototype.setSideLeght = function (value) {
+    if ( this.__isCorrectData (value)){
+        this._sideLeght = value;
+    }
+};
+Square.prototype.getSideLeght = function () {
+    return this._sideLeght;
+};
+Square.prototype.calcPerimeter = function () {
+    if (this._sideLeght != null) {
+        return this._perimeter = this._sideLeght * 4;
+    }
+    return console.log('Property Side Length is not specified. Please set the property using the "setSideLeght" method.');
+};
+//Без расширения(переопределяем метод Батьки "Square")
+function CubePolymorphism (nameFigure){
+    Square.call(this, nameFigure);
+};
+CubePolymorphism.prototype = Object.create(Square.prototype);
+CubePolymorphism.prototype.constructor = CubePolymorphism;
+CubePolymorphism.prototype.calcPerimeter = function () {
+    if (this._sideLeght != null) {
+        return this._perimeter = this._sideLeght * 12;
+    }
+    return console.log('Property Side Length is not specified. Please set the property using the "setSideLeght" method.');
+}
+//C расширением(Используем (использовать результат метода Батьки "Square" для дальнейших расчетов.)
+function CubeInheritance (nameFigure){
+    Square.call(this, nameFigure);
+};
+CubeInheritance.prototype = Object.create(Square.prototype);
+CubeInheritance.prototype.constructor = CubeInheritance;
+CubeInheritance.prototype.calcPerimeterCube = function () {
+        return this._perimeter * 3;
+};
+var s = new Square ('Square');
+var cp = new CubePolymorphism ('PolyCube');
+var ci = new CubeInheritance ('InherCube');
+
