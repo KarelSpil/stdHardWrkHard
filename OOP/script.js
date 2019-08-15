@@ -317,3 +317,61 @@ var user = {
 };
 var f = bind(func, user);
 f(); // "Tom – 20"
+
+//Lesson 3. Task 5.
+var s = (function () {
+    var fisrtSideLenght;
+    var secontSideLenght;
+    function operation() {
+        return fisrtSideLenght * secontSideLenght;
+    }
+    function isCorrectData (number) {
+        if (typeof number == 'number' && number > 0) {
+            return true;
+        }
+        return false;
+    }
+    return {
+        setFirstSideLenght : function (number) {
+            if ( isCorrectData(number) ){
+                fisrtSideLenght = number;
+            } 
+        },
+        setSecondSideLenght : function (number) {
+            if ( isCorrectData(number) ){
+                secontSideLenght = number;
+            }
+        },
+        operation : function () {
+            return operation();
+        }
+    }
+}());
+var p = (function () {
+    var fisrtSideLenght;
+    var secontSideLenght;
+    function operation() {
+        return (fisrtSideLenght + secontSideLenght) * 2;
+    }
+    function isCorrectData (number) {
+        if (typeof number == 'number' && number > 0) {
+            return true;
+        }
+        return false;
+    }
+    return {
+        setFirstSideLenght : function (number) {
+            if ( isCorrectData(number) ){
+                fisrtSideLenght = number;
+            } 
+        },
+        setSecondSideLenght : function (number) {
+            if ( isCorrectData(number) ){
+                secontSideLenght = number;
+            }
+        },
+        operation : function () {
+            return operation();
+        }
+    }
+}());
