@@ -96,3 +96,18 @@ RobotVacuumCleaner.prototype.goToCharge = function (chargePercent) {
 
 
 var rvc = new RobotVacuumCleaner();
+
+/*Класс Fan
+
+    Поведение :
+        _status : Boolean
+        _currentMode: String
+        _mods : [String, String, String, .....]
+
+    Состояние :
+        getStatus () : void
+        setStatus (args : Boolean) : void
+
+        getCurrentMode () :  String
+        nextMode () : void
+        previousMode () : void */
