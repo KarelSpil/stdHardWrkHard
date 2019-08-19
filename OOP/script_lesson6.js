@@ -18,3 +18,8 @@ var square = {
 };
 console.log(String(square));
 console.log(Number(square));
+
+//Lesson 6. Task 2.
+var str = 'Login1,LOgin2,login3,loGin4';
+str = str.toLowerCase();
+console.log(str.split (','));
