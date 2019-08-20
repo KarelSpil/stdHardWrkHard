@@ -34,17 +34,25 @@ console.log(age4);
 /* Напишите функц mul(), которая принемает любое колво парам разного типа и возвращает произвед параметров типа Number.
 Если парам типа Number отсутствуют, возвращает число 0.
 Нельзя использовать arguments, но в функцию можно добавить один парам.
-разобрать эту ерунду с Максом
+разобрать эту ерунду с Максом */
 
 function mul (...all) {
+    let newArr = all.filter(function(number){
+    	if (typeof number == "number"){
+    		return number;		
+    	};
+    });
     let res = 1;
-    if (typeof all == "number") {
-        res *= all;
-        return res;
-    } else if (typeof all != "number"){
-        return 0;
+    if (typeof newArr[0] == "number"){
+    	function mult (value) {
+    	return res *= value;
+    	};
+    	newArr.forEach(mult);
+    	return res;
+    } else if (typeof newArr[0] != "number"){
+    	return res = 0;
     };
 };
 console.log(mul(1, 'str', 2, 3, true));
 console.log(mul(null, 'str', false, true));
-*/
+
